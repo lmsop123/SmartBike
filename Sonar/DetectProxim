@@ -1,0 +1,23 @@
+
+#!/bin/bash
+
+sudo gpio -g mode 24 output
+sudo gpio -g write 24 0
+
+
+while : 
+do 
+     CMD=$(sudo ./SonicBoom)
+        
+     if [ $CMD == "1" ]
+     then
+       
+	sudo gpio -g write 24 1
+     else
+        sudo gpio -g write 24 0
+     fi
+done
+
+
+
+
